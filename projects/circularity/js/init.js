@@ -40,6 +40,18 @@ var init = function (window) {
         drawCircle();
         drawCircle();
 
+        //         var loopsCompleted = 0; 
+        // while (loopsCompleted < 10) {
+        //     // do something
+        //     loopsCompleted++
+        // }
+
+         for ( var i = 0; i <= 100; i++) {
+              drawCircle();
+
+         }
+          
+
 
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
@@ -53,20 +65,15 @@ var init = function (window) {
         function update() {
             // TODO 4 : Update the circle's position //
 
-            physikz.updatePosition(circles[0]);
-            physikz.updatePosition(circles[1]);
-            physikz.updatePosition(circles[2]);
-            physikz.updatePosition(circles[3]);
-            physikz.updatePosition(circles[4]);
+            // these were deleted because in the TODO it says that we dont want to call each 
+            // circle 
 
 
             // TODO 5 / 10 :game.checkCirclePosition( /* Your Bracket Notation HERE */ );
-            game.checkCirclePosition( circles[0]);
-            game.checkCirclePosition( circles[0]);
-            game.checkCirclePosition( circles[0]);
-            game.checkCirclePosition( circles[0]);
-            game.checkCirclePosition( circles[0]);
             
+            // these were deleted because in the TODO it says that we dont want to call each 
+            // circle 
+
 
 
 
@@ -74,6 +81,11 @@ var init = function (window) {
 
 
             // TODO 9 : Iterate over the array
+            for (var i = 0; i < circles.length; i++) {
+                var eachCircle = circles[i];
+               physikz.updatePosition(eachCircle)
+               game.checkCirclePosition(eachCircle)
+         }
 
 
 
@@ -97,7 +109,7 @@ var init = function (window) {
             }
 
             if (circle.x < 0) {
-               circle.x = canvas.width
+                circle.x = canvas.width
             }
 
             if (circle.y < 0) {
